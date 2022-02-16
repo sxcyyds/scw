@@ -1,0 +1,21 @@
+package com.atguigu.crowd.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.atguigu.crowd.entity.Admin;
+import com.atguigu.crowd.mapper.AdminMapper;
+import com.atguigu.crowd.service.api.AdminService;
+
+public class AnminServiceImpl implements AdminService{
+	@Autowired
+	private AdminMapper adminMapper;
+
+	public void saveAdmin(Admin admin) {
+		// TODO Auto-generated method stub
+		int i = adminMapper.insert(admin);
+		System.out.println(i);
+		
+	}
+	
+
+}

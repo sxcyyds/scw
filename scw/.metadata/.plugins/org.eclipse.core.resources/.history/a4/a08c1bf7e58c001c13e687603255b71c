@@ -1,0 +1,17 @@
+package com.atguigu.crowd.mvc.handle;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.atguigu.crowd.service.api.AdminService;
+
+public class TestHandle {
+	@Autowired
+	private AdminService adminService;
+	
+	@RequestMapping("/test/ssm.html")
+	public String testSSMString() {
+		return "ruccess";
+	}
+
+}

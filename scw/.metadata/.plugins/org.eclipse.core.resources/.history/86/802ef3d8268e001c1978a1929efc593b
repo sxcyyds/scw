@@ -1,0 +1,6 @@
+package com.atguigu.crowd.utils;
+
+public class CrowdConstant {
+	public static final String  ATTR_NAME_EXCEPTION="exception";
+
+}

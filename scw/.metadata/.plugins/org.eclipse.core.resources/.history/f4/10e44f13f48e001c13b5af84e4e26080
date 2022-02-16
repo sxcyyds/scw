@@ -1,0 +1,72 @@
+package com.atguigu.crowd.service.impl;
+
+import java.util.List;
+import java.util.Objects;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.atguigu.crowd.entity.Admin;
+import com.atguigu.crowd.entity.AdminExample;
+import com.atguigu.crowd.entity.AdminExample.Criteria;
+import com.atguigu.crowd.exception.LoginFailedException;
+import com.atguigu.crowd.mapper.AdminMapper;
+import com.atguigu.crowd.service.api.AdminService;
+import com.atguigu.crowd.utils.CrowdConstant;
+import com.atguigu.crowd.utils.CrowdUtil;
+@Service
+public class AnminServiceImpl implements AdminService{
+	@Autowired
+	private AdminMapper adminMapper;
+
+	public int saveAdmin(Admin admin) {
+		// TODO Auto-generated method stub
+		int i = adminMapper.insert(admin);
+		return i;
+		
+	}
+
+	public List<Admin> getAll() {
+		// TODO Auto-generated method stub
+		List<Admin> selectByExample = adminMapper.selectByExample(new AdminExample());
+		return selectByExample;
+	}
+
+	public Admin getAdminByLoginAcct(String username, String password,HttpSession session) {
+		// 1、根据登录的账号查询Admin对象
+				AdminExample adminExample = new AdminExample();
+				// 创建Criteria对象
+				Criteria createCriteria = adminExample.createCriteria();
+				// 在Criteria对象中封装查询条件
+				createCriteria.andLoginAcctEqualTo(username);
+				//  调用AdminMapper的方法执行查询
+				List<Admin> list = adminMapper.selectByExample(adminExample);
+		
+		//2、判断Admin对象是否为空
+				if(list == null || list.size() == 0) {
+					throw new RuntimeException(CrowdConstant.MESSAGE_LOGIN_FAILD);
+				}
+				
+				Admin admin=list.get(0);
+				if(list.size() > 1) {
+					throw new RuntimeException(CrowdConstant.MESSAGE_SYSTEM_ERROR_LOGIN_NOT_UNIQUE);
+				}
+		//3、如果Admin对象不为null则将数据库密码从Admin对象获取
+				String passwordDB=admin.getUserPswd();
+		//4、将表单提交的铭文密码进行加密
+				String md5 = CrowdUtil.md5(password);
+				if(!Objects.equals(passwordDB, md5)) {
+					throw new RuntimeException(CrowdConstant.MESSAGE_LOGIN_FAILD);
+					
+				}
+				
+			
+		return admin;
+	}
+
+	
+	
+
+}

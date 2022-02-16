@@ -1,0 +1,25 @@
+package com.atguigu.crowd.mvc.handle;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.atguigu.crowd.entity.Admin;
+import com.atguigu.crowd.service.api.AdminService;
+
+public class TestHandle {
+	@Autowired
+	private AdminService adminService;
+	
+	@RequestMapping("/test/ssm.html")
+	public String testSSMString(ModelMap modelMap) {
+		System.out.println(2);
+		List<Admin> adminlist=adminService.getAll();
+		modelMap.addAttribute("adminlist", adminlist);
+		System.out.println(1);
+		return "target";
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.atguigu.crowd.mvc.handle;
+
+public class AdminHandle {
+
+}

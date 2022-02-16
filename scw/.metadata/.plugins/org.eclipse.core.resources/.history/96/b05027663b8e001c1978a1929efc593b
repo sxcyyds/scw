@@ -1,0 +1,19 @@
+package com.atguigu.crowd.utils;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class CrowdUtil {
+	public static boolean judgeRequestType(HttpServletRequest request ) {
+		//1、获取头部信息
+		String header = request.getHeader("Accept");
+		String header2 = request.getHeader("X-Requested-With");
+		//2、根据头部信息判断是普通请求还是ajax请求
+		if(( header!=null && header.contains("application/json")) || (header2!=null &&  header2.contains("XMLHttpRequest"))) {
+			return true;
+		}
+		return false;
+		
+		
+	}
+
+}

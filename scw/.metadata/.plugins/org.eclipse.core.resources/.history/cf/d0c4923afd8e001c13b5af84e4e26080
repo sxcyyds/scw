@@ -1,0 +1,54 @@
+package com.atguigu.crowd.service.impl;
+
+import java.util.List;
+import java.util.Objects;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.atguigu.crowd.entity.Admin;
+import com.atguigu.crowd.entity.AdminExample;
+import com.atguigu.crowd.entity.AdminExample.Criteria;
+import com.atguigu.crowd.exception.LoginFailedException;
+import com.atguigu.crowd.mapper.AdminMapper;
+import com.atguigu.crowd.service.api.AdminService;
+import com.atguigu.crowd.utils.CrowdConstant;
+import com.atguigu.crowd.utils.CrowdUtil;
+@Service
+public class AnminServiceImpl implements AdminService{
+	@Autowired
+	private AdminMapper adminMapper;
+
+	public int saveAdmin(Admin admin) {
+		// TODO Auto-generated method stub
+		int i = adminMapper.insert(admin);
+		return i;
+		
+	}
+
+	public List<Admin> getAll() {
+		// TODO Auto-generated method stub
+		List<Admin> selectByExample = adminMapper.selectByExample(new AdminExample());
+		return selectByExample;
+	}
+
+	public Admin getAdminByLoginAcct(String username, String password) {
+		// 1、根据传递的username查询用户
+		AdminExample example = new AdminExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andLoginAcctEqualTo(username);
+		
+		List<Admin> selectByExample = adminMapper.selectByExample(example);
+		System.out.println(selectByExample);
+			
+		return null;
+	}
+
+
+
+	
+	
+
+}

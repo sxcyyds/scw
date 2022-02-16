@@ -1,0 +1,12 @@
+//com.springsource.config.ui.prefs.activePageIndex\:/atcrowdfunding01-admin-parent/atcrowdfunding02-admin-webui/src/main/resources/mybatis/mapper/AdminMapper.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/atcrowdfunding02-admin-webui/src/main/resources/mybatis/mapper/AdminMapper.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/atcrowdfunding02-admin-webui/src/main/resources/mybatis/mybatis-config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/atcrowdfunding02-admin-webui/src/main/resources/mybatis/mybatis-config2.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/atcrowdfunding02-admin-webui/src/main/resources/spring-persist-mybatis.x\ ml.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/atcrowdfunding02-admin-webui/src/main/resources/spring-persist-mybatis.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/atcrowdfunding02-admin-webui/src/main/resources/spring-persist-tx.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/atcrowdfunding02-admin-webui/src/main/resources/spring-web-mvc.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/atcrowdfunding02-admin-webui/src/main/webapp/WEB-INF/web.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/atcrowdfunding03-admin-component/src/main/resources/logback.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+com.springsource.config.ui.prefs.tabs.dialog=always
+eclipse.preferences.version=1

@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\ruanjian\eclipse\scw\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+606946225.index
+2367819067.index
+3100201167.index
+1484195825.index
+1036249041.index
+1796933718.index
+1389158374.index

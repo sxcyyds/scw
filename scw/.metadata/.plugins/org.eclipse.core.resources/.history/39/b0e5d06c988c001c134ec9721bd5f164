@@ -1,0 +1,33 @@
+package lianjie;
+
+
+
+
+import java.sql.SQLException;
+import java.sql.*;
+
+import javax.sql.DataSource;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.mysql.jdbc.Connection;
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"classpath:spring-persist-mybatis.xml"})
+public class TestPP {
+	@Autowired
+	private DataSource dataSource;
+	
+	@Test
+	public void testgetConnection() throws SQLException {
+		
+		Connection connection=dataSource.getConnection();
+		
+	}
+	
+	
+
+}

@@ -1,0 +1,5 @@
+package com.atguigu.crowd.mvc.Interceptor;
+
+public class LoginInterceptor {
+
+}

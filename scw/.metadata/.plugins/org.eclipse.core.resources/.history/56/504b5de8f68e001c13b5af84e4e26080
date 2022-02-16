@@ -1,0 +1,32 @@
+package com.atguigu.crowd.mvc.handle;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.atguigu.crowd.entity.Admin;
+import com.atguigu.crowd.service.api.AdminService;
+
+@Controller
+public class AdminHandle {
+	@Autowired
+	private AdminService adminService;
+
+	
+	
+	@RequestMapping(value="admin/do/logina.html",method = RequestMethod.POST)
+	public String  doLogin() {
+//		Admin admin=adminService.getAdminByLoginAcct(username,password);
+//		System.out.println(admin);
+		//将登录成功的admin对象存储在session中
+//		session.setAttribute("admin", admin);
+		
+		
+		return "admin-main";
+		
+	}
+}
